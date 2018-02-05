@@ -1058,8 +1058,13 @@ JSQMessagesKeyboardControllerDelegate>
         [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length - 84
                                       bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
     } else {
-        [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length
-                                      bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
+        if (self.topLayoutGuide.length > 0) {
+            [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length - 84
+                                          bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
+        } else {
+            [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length
+                                          bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
+        }
     }
 }
 
