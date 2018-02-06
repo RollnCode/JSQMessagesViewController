@@ -1055,11 +1055,11 @@ JSQMessagesKeyboardControllerDelegate>
 - (void)jsq_updateCollectionViewInsets
 {
     if (self.inputToolbar.contentView.textView.isFirstResponder) {
-        [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length - 84
+        [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length - self.topLayoutGuide.length
                                       bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
     } else {
         if (self.topLayoutGuide.length > 0) {
-            [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length - 84
+            [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length - self.topLayoutGuide.length
                                           bottomValue:CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame)];
         } else {
             [self jsq_setCollectionViewInsetsTopValue:self.topLayoutGuide.length
